@@ -104,9 +104,12 @@ for generation in range(generations):
         distribution = [p.elo for p in population if abs(p.elo) < 1500]
         
         plt.hist(distribution, bins = 2 * population_size // league_size)
+        plt.title("Frequency of people in each league")
         plt.show()
 
+        
         plt.scatter([p.ideal_elo for p in population if abs(p.elo) < 1500], distribution)
+        plt.title("ELO vs Actual Skill")
         #plt.xlim(0,1500)
         #plt.ylim(0,1500)
         plt.show()
